@@ -1,6 +1,6 @@
 # Carbon Formik 
 
-This project was created to understand the interaction between Carbon and Formik.
+This project was created to have a working local project tounderstand the interaction between Carbon and Formik.
 It was taken from [this sandbox](https://codesandbox.io/s/carbon-quickstart-xi5jc). The exception being that I added
 "node-sass": "^4.0.0" in the package.json.
 
@@ -8,7 +8,7 @@ It was taken from [this sandbox](https://codesandbox.io/s/carbon-quickstart-xi5j
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

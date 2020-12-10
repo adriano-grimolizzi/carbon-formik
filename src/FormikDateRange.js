@@ -3,7 +3,7 @@ import "carbon-react/lib/utils/css";
 
 import DateRange from "carbon-react/lib/__experimental__/components/date-range";
 
-const App = () => {
+const FormikDateRange = () => {
   const [state, setState] = useState(["2016-10-01", "2016-10-30"]);
 
   const handleChange = ({ target }) => {
@@ -26,4 +26,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default FormikDateRange;
