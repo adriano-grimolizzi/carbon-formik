@@ -7,6 +7,7 @@
   "dependencies": {
     "carbon-react": "52.0.0",
     "core-js": "3.2.1",
+    "formik": "^2.2.6",
     "i18n-js": "3.3.0",
     "node-sass": "^4.0.0",
     "react": "16.8.6",
