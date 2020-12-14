@@ -2,34 +2,30 @@ import React, { useState } from "react";
 
 // Let's put the state, handleChange... on a render props
 
-class MiniFormik extends React.Component {
-  state = {
-    values: this.props.initialValues || {},
-  };
-  handleChange = (event) => {
+const MiniFormik = (props) => {
+  const [values, setValues] = useState(props.initialValues || {});
+
+  const handleChange = (event) => {
     const { target } = event;
     const { name, value } = target;
     event.persist();
-    this.setState((prevState) => ({
-      values: {
-        ...prevState.values,
-        [name]: value,
-      },
-    }));
-  };
-  handleSubmit = (event) => {
-    event.preventDefault();
-    // validate
-    this.props.onSubmit(this.state.values);
-  };
-  render() {
-    return this.props.children({
-      ...this.state,
-      handleChange: this.handleChange,
-      handleSubmit: this.handleSubmit,
+    setValues({
+      ...values,
+      [name]: value,
     });
-  }
-}
+  };
+  const handleSubmit = (event) => {
+    // validate
+    event.preventDefault();
+    props.onSubmit(values);
+  };
+
+  return props.children({
+    values,
+    handleChange: handleChange,
+    handleSubmit: handleSubmit,
+  });
+};
 
 const Intro = () => {
   return (
