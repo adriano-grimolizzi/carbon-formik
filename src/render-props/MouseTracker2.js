@@ -1,14 +1,5 @@
 import React, { useState } from "react";
 
-const Cat = (props) => {
-  const { mousePosition } = props;
-  return (
-    <p>
-      The current mouse position is ({mousePosition.x}, {mousePosition.y})
-    </p>
-  );
-};
-
 const Mouse = (props) => {
   const [state, setState] = useState({ x: 0, y: 0 });
 
@@ -21,20 +12,20 @@ const Mouse = (props) => {
 
   return (
     <div style={{ height: "100vh" }} onMouseMove={handleMouseMove}>
-      {props.render(state)}
+      <p>
+        The current mouse position is ({state.x}, {state.y})
+      </p>
     </div>
   );
 };
 
 const MouseTracker = () => {
-  return (
-    <>
-       <h1>Move the mouse around!</h1>
-        <Mouse render={mouse => (
-          <Cat mousePosition={mouse} />
-        )}/>
-    </>
-  );
-};
+    return (
+        <>
+          <h1>Move the mouse around!</h1>
+          <Mouse />
+        </>
+      );
+}
 
 export default MouseTracker;
