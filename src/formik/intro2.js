@@ -8,7 +8,6 @@ const MiniFormik = (props) => {
   const handleChange = (event) => {
     const { target } = event;
     const { name, value } = target;
-    event.persist();
     setValues({
       ...values,
       [name]: value,
@@ -29,39 +28,37 @@ const MiniFormik = (props) => {
 
 const Intro = () => {
   return (
-    <>
-      <MiniFormik
-        initialValues={{
-          firstName: "Joe",
-          lastName: "Black",
-        }}
-        onSubmit={(values) => alert(JSON.stringify(values))}
-      >
-        {({ values, handleChange, handleSubmit }) => (
-          <form onSubmit={handleSubmit}>
-            <label>First Name</label>
-            <input
-              type="text"
-              name="firstName"
-              onChange={handleChange}
-              value={values.firstName}
-            />
-            <br />
-            <label>Last Name</label>
-            <input
-              type="text"
-              name="lastName"
-              onChange={handleChange}
-              value={values.lastName}
-            />
-            <br />
-            <button type="submit" value="Submit">
-              Sign Up
-            </button>
-          </form>
-        )}
-      </MiniFormik>
-    </>
+    <MiniFormik
+      initialValues={{
+        firstName: "Joe",
+        lastName: "Black",
+      }}
+      onSubmit={(values) => alert(JSON.stringify(values))}
+    >
+      {({ values, handleChange, handleSubmit }) => (
+        <form onSubmit={handleSubmit}>
+          <label>First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            onChange={handleChange}
+            value={values.firstName}
+          />
+          <br />
+          <label>Last Name</label>
+          <input
+            type="text"
+            name="lastName"
+            onChange={handleChange}
+            value={values.lastName}
+          />
+          <br />
+          <button type="submit" value="Submit">
+            Sign Up
+          </button>
+        </form>
+      )}
+    </MiniFormik>
   );
 };
 

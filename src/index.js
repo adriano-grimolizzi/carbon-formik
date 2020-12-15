@@ -4,16 +4,13 @@ import { ThemeProvider } from "styled-components";
 import mintTheme from "carbon-react/lib/style/themes/mint";
 import "carbon-react/lib/utils/css";
 import AppWrapper from "carbon-react/lib/components/app-wrapper";
-
-import Intro from "./formik/intro2";
+import SignupForm from "./formik/basic5";
 
 const Index = () => {
   return (
     <ThemeProvider theme={mintTheme}>
       <AppWrapper>
-
-        <Intro />
-        
+        <SignupForm />
       </AppWrapper>
     </ThemeProvider>
   );
