@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const WithCounter = (OriginalComponent) => {
-  class UpdatedComponent extends React.Component {
+const withCounter = (WrappedComponent) => {
+  class WithCounter extends React.Component {
     constructor(props) {
       super(props);
 
@@ -16,7 +16,7 @@ const WithCounter = (OriginalComponent) => {
 
     render() {
       return (
-        <OriginalComponent
+        <WrappedComponent
           count={this.state.count}
           incrementCount={this.incrementCount}
         />
@@ -24,7 +24,7 @@ const WithCounter = (OriginalComponent) => {
     }
   }
 
-  return UpdatedComponent;
+  return WithCounter;
 };
 
 const Click = ({ count, incrementCount }) => (
@@ -34,8 +34,8 @@ const Hover = ({ count, incrementCount }) => (
   <h1 onMouseOver={incrementCount}>Hovered {count} times!</h1>
 );
 
-const ClickCounter = WithCounter(Click);
-const HoverCounter = WithCounter(Hover);
+const ClickCounter = withCounter(Click);
+const HoverCounter = withCounter(Hover);
 
 const Hoc1 = () => {
   return (
