@@ -9,7 +9,7 @@ const Cat = (props) => {
   );
 };
 
-const Mouse = (props) => {
+const Mouse = (children) => {
   const [state, setState] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (event) => {
@@ -21,7 +21,7 @@ const Mouse = (props) => {
 
   return (
     <div style={{ height: "100vh" }} onMouseMove={handleMouseMove}>
-      {props.render(state)}
+      {children.render(state)}
     </div>
   );
 };
