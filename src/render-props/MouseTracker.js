@@ -29,10 +29,8 @@ const Mouse = (props) => {
 const MouseTracker = () => {
   return (
     <>
-       <h1>Move the mouse around!</h1>
-        <Mouse render={mouse => (
-          <Cat mousePosition={mouse} />
-        )}/>
+      <h1>Move the mouse around!</h1>
+      <Mouse render={(mouse) => <Cat mousePosition={mouse} />} />
     </>
   );
 };
