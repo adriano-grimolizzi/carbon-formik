@@ -5,13 +5,14 @@ import mintTheme from "carbon-react/lib/style/themes/mint";
 import "carbon-react/lib/utils/css";
 import AppWrapper from "carbon-react/lib/components/app-wrapper";
 // import SignupForm from "./formik/basic5";
-import App from "./context/Context3";
+import Hoc3 from "./HOC/Hoc3";
+// import App from "./context/Context3";
 
 const Index = () => {
   return (
     <ThemeProvider theme={mintTheme}>
       <AppWrapper>
-        <App />
+        <Hoc3 />
       </AppWrapper>
     </ThemeProvider>
   );
