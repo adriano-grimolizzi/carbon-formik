@@ -5,7 +5,7 @@ import mintTheme from "carbon-react/lib/style/themes/mint";
 import "carbon-react/lib/utils/css";
 import AppWrapper from "carbon-react/lib/components/app-wrapper";
 
-import App from "./example/Example1";
+import App from "./render-twice/Clock";
 
 const Index = () => {
   return (
