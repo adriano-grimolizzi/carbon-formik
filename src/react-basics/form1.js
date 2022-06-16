@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
-const Form1 = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+export default function () {
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
 
-  const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value);
-  };
-  const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
-  };
+  function handleFirstNameChange(e) {
+    setFirstName(e.target.value)
+  }
+  function handleLastNameChange(e) {
+    setLastName(e.target.value)
+  }
 
-  const onSubmit = (e) => {
+  function onSubmit(e) {
     alert(`
     First Name: ${firstName}
-    Last Name: ${lastName}`);
-    e.preventDefault();
-  };
+    Last Name: ${lastName}`)
+    e.preventDefault()
+  }
 
   return (
     <>
@@ -44,7 +44,5 @@ const Form1 = () => {
         </button>
       </form>
     </>
-  );
-};
-
-export default Form1;
+  )
+}

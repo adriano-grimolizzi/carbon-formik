@@ -1,24 +1,21 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
-// ES6 Computed Property:
-// We can share the change handler across multiple inputs
+export default function () {
+  const [values, setValues] = useState({})
 
-const Form2 = () => {
-  const [state, setState] = useState({});
-
-  const handleChange = (event) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.value,
-    });
-  };
+  function handleChange(event) {
+    setValues(prevValues => ({
+      ...prevValues,
+      [event.target.name]: event.target.value
+    }))
+  }
 
   const onSubmit = (e) => {
     alert(`
-    First Name: ${state.firstName}
-    Last Name: ${state.lastName}`);
-    e.preventDefault();
-  };
+    First Name: ${values.firstName}
+    Last Name: ${values.lastName}`)
+    e.preventDefault()
+  }
 
   return (
     <>
@@ -29,7 +26,7 @@ const Form2 = () => {
             type="text"
             name="firstName"
             onChange={handleChange}
-            value={state.firstName}
+            value={values.firstName}
           />
         </div>
         <div>
@@ -38,7 +35,7 @@ const Form2 = () => {
             type="text"
             name="lastName"
             onChange={handleChange}
-            value={state.lastName}
+            value={values.lastName}
           />
         </div>
         <button type="submit" value="Submit">
@@ -46,7 +43,5 @@ const Form2 = () => {
         </button>
       </form>
     </>
-  );
-};
-
-export default Form2;
+  )
+}
